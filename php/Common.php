@@ -52,7 +52,7 @@ Class Common {
 		return $all;
 		
 	}catch (PDOException $e){
-		$errmsg = 'SQL実行エラー:' . $e->getMessage();
+		$this->errmsg = 'SQL実行エラー:' . $e->getMessage();
 	}
 	
 	  //echo $errmsg;
