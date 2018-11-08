@@ -60,9 +60,8 @@ Class Common {
   }
     /*  エラーメッセージ取得  */
   function db_msg(){
-  	$msg = $errmsg;
-	var_dump($this->errmsg);
-  	return $msg;
+  	$msg = $this->errmsg;
+	return $msg;
   }
 
     /* DBとの接続の切断  */
