@@ -69,7 +69,7 @@ function h($str){                   //HTMLに文字列出力
             </table>
 
     <?php }else{  //エラーメッセージ ?>	  
-          <?php echo $db->db_msg(); ?>	     
+          <?= h($db->db_msg()) ?>	     
     <?php }   //else end  ?>
           
 <?php } ?>          
