@@ -50,7 +50,7 @@ function h($str){                   //HTMLに文字列出力
       <div id="log">
         <h2>実行結果</h2>
         <!--textarea class="log" rows=20 cols=60-->
-<?php if(isset($_POST['sql'])){           //SQL実行した場合?>       
+<?php if(!empty($_POST['sql'])){           //SQL実行した場合?>       
           <?=h('実行SQL：' . $_POST['sql'])?>	
 	  </br>
     <?php if($db->errmsg == null){       //エラー時の表示を制御  ?>
