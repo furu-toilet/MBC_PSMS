@@ -37,7 +37,7 @@ function h($str){                   //HTMLに文字列出力
     <header>
       <h1>PSMS  PostgreSQLManegmentStudio</h1>
     </header>
-    <iframe class="leftframe" src="./php/left.php"></iframe>
+    <iframe class="leftframe" src="php/left.php"></iframe>
     <div class="right">
       <form method="post" name="SQL_sendform">
         <h2>SQL</h2>
