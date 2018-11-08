@@ -54,7 +54,7 @@ function h($str){                   //HTMLに文字列出力
           <?=h('実行SQL：' . $_POST['sql'])?>	
 	  </br>
     <?php if($db->errmsg == null){       //エラー時の表示を制御  ?>
-	    <? =h('正常終了') ?></br>
+	    <?=h('正常終了') ?></br>
             <table>
             <tr>
         <?php foreach($result[0] as $key => $_): ?>
