@@ -9,35 +9,17 @@ Class Common {
   function Common(){
 	/*  PostgreSQLに接続  */
 	try{
-	$url = parse_url(getenv('DATABASE_URL'));
-	$dsn = sprintf("pgsql:host=%s;dbname=%s",$url['host'],substr($url['path'],1));	
+	$url = parse_url(getenv('DATABASE_URL'));		//リモートのPostgreSQLからDB情報取得
+	$dsn = sprintf("pgsql:host=%s;dbname=%s",$url['host'],substr($url['path'],1));		//設定
 
-	$this->pdo = new PDO($dsn,$url['user'],$url['pass']);
-	$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}catch(Exception $e){
+	$this->pdo = new PDO($dsn,$url['user'],$url['pass']);				//PDO作成
+	$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		//エラーモード設定
+	}catch(Exception $e){		//例外処理
 		exit('データベース接続失敗：' .$e->getMessage());
 	}
 
   }
 
-
-	/*  SQL文をDBに投げる（戻り値無し） */
-    /*
-  function db_sql_only($sql){
-	try{
-		$this->stmt = $this->pdo->prepare($sql);	//SQL文の用意
-		$this->stmt->execute();				//SQL文の実行
-		
-			
-	
-	}catch(PDOExeption $e){
-        var_dump(PDO::errorInfo());	//ErrInfo
-        //print_r($this->stmt->errorInfo());	//エラーメッセージ取得
-        exit('SQL Error or PHP Error(Common.php"furusawa") :' .$e->getMessage());
-	   }
-
-    }
-*/
 
 	/*  SQL文をDBに投げる （戻り値有 SELECT） */
   function db_sql($sql){
