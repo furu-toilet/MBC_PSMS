@@ -3,7 +3,7 @@ Class Common {
   private $pdo = null;
   private $stmt = null;
   private $sql = null;
-  public $errmsg = null;
+  private $errmsg = null;
 
 
   function Common(){
@@ -36,8 +36,6 @@ Class Common {
 	}catch (PDOException $e){
 		$this->errmsg = 'SQL実行エラー:' . $e->getMessage();
 	}
-	
-	  //echo $errmsg;
 	
   }
     /*  エラーメッセージ取得  */
