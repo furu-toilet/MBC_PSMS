@@ -53,7 +53,7 @@ function h($str){                   //HTMLに文字列出力
 <?php if(!empty($_POST['sql'])){           //SQL実行した場合?>       
           <?=h('実行SQL：' . $_POST['sql'])?>	
 	  </br>
-    <?php if($db->errmsg == null){       //エラー時の表示を制御  ?>
+    <?php if($db->db_msg() == null){       //エラー時の表示を制御  ?>
 	    <?=h('正常終了') ?></br>
             <table>
             <tr>
