@@ -20,6 +20,7 @@
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
 		</div>
 		</form>
+		<button id="ajax">ajax</button>
       <div id="log">
         <h2>実行結果</h2>
 	<script type="text/javascript">
